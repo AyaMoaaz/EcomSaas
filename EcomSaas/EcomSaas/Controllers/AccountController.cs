@@ -137,9 +137,12 @@ namespace EcomSaas.Controllers
         //
         // GET: /Account/Register
         [AllowAnonymous]
-        public ActionResult Register()
+        public ActionResult Register(string plan)
         {
-            return View();
+            
+            RegisterViewModel register = new RegisterViewModel();
+            register.SubscriptionPlan = plan;
+            return View(register);
         }
 
         //
